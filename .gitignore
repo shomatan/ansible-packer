@@ -1,6 +1,0 @@
-.vagrant/
-cookbooks/
-nodes/
-Berksfile.lock
-.kitchen/
-.kitchen.local.yml
