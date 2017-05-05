@@ -1,7 +1,15 @@
 ---
+- name: Create install directory.
+  file:
+    path: /usr/local/bin
+    recurse: yes
+
 - name: Unzip packer.
   unarchive:
     src: https://releases.hashicorp.com/packer/1.0.0/packer_1.0.0_linux_amd64.zip
-    dest: /usr/local/bin/packer
+    dest: /usr/local/bin
     remote_src: True
 
+- name: Purge apk cache.
+  command: rm -rf /var/cache/apk/*
+  when: ansible_connection == 'docker'
