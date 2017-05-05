@@ -1,6 +1,10 @@
 ---
 - name: Add binary repository.
-  homebrew_tap: name=homebrew/binary state=present
+  homebrew_tap:
+    name: homebrew/binary
+    state: present
 
 - name: Ensure packer is installed from homebrew.
-  homebrew: name=packer state=present
+  homebrew: 
+    name: packer
+    state: present
